@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Кэт энерджи</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="js/script.min.js" as="script">
+    <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
+    <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
+    <link rel="stylesheet" href="css/style.min.css" >
+  </head>
+  <body>
+    <div style="display: none">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+    <header class="page-header">
+      <nav class="main-nav main-nav--no-js container">
+        <div class="main-nav__logo logo">
+          <a class="logo__link" href="index.html">
+            <svg class="logo__image logo__image--mobile" width="191" height="38">
+              <use xlink:href="#logo-mobile"></use>
+            </svg>
+            <svg class="logo__image logo__image--tablet" width="173" height="58">
+              <use xlink:href="#logo-tablet"></use>
+            </svg>
+            <svg class="logo__image logo__image--desktop" width="202" height="59">
+              <use xlink:href="#logo-desktop"></use>
+            </svg>
+          </a>
+          <button class="logo__toggle main-nav__button" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+            <svg class="logo__toggle-icon logo__toggle-icon--open" width="24" height="19">
+              <use xlink:href="#icon-mobile-menu"></use>
+            </svg>
+            <svg class="logo__toggle-icon logo__toggle-icon--close" width="18" height="18">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item">
+            <a class="site-list__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-list__item">
+            <a class="site-list__link" href="catalog.html">Каталог продукции</a>
+          </li>
+          <li class="site-list__item site-list__item--last">
+            <a class="site-list__link site-list__link--active">Подбор программы</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-form">
+      <section class="selection">
+        <div class="container">
+          <h1 class="selection__title">Подбор программы</h1>
+          <p class="selection__text">Заполните анкету и мы подберем программу питания для вашего кота</p>
+        </div>
+        <form class="selection__form" method="post" action="https://echo.htmlacademy.ru">
+          <div class="selection__column container">
+            <div class="selection__fieldset selection__fieldset--personal">
+              <div class="selection__block">
+                <label class="selection__label" for="name">Имя:*</label>
+                <input class="selection__text-field" type="text" id="name" name="name" placeholder="Барсик">
+              </div>
+              <div class="selection__block">
+                <label class="selection__label" for="weight">Вес (кг):*</label>
+                <input class="selection__text-field" type="text" id="weight" name="weight" placeholder="7">
+              </div>
+              <div class="selection__block">
+                <label class="selection__label" for="age">Возраст (лет):</label>
+                <input class="selection__text-field" type="text" id="age" name="age" placeholder="7">
+              </div>
+            </div>
+            <div class="selection__fieldset selection__fieldset--type">
+              <ul class="selection__list">
+                <li class="selection__block">
+                  <input class="visually-hidden selection__radio" type="radio" id="slim" name="program" value="slim" checked>
+                  <label class="selection__radio-label" for="slim">Похудение</label>
+                </li>
+                <li class="selection__block">
+                  <input class="visually-hidden selection__radio" type="radio" id="pro" name="program" value="pro">
+                  <label class="selection__radio-label" for="pro">Набор массы</label>
+                </li>
+                <li class="selection__block">
+                  <input class="visually-hidden selection__radio" type="radio" id="none" name="program" value="none">
+                  <label class="selection__radio-label" for="none">Не знаю (Нужен ваш совет)</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="selection__wrapper line">
+            <h2 class="selection__fieldset-title line__title">Контактные данные<br class="selection__fieldset-title-br"> (владельца кота)</h2>
+          </div>
+          <div class="selection__fieldset selection__fieldset--contacts container">
+            <div class="selection__block">
+              <label class="selection__label" for="email">E-mail:*</label>
+              <input class="selection__text-field" type="email" id="email" name="email" placeholder="kuklachev@gmail.com">
+              <svg class="selection__icon selection__icon--mail" width="17" height="13">
+                <use xlink:href="#icon-mail"></use>
+              </svg>
+            </div>
+            <div class="selection__block">
+              <label class="selection__label" for="phone">Телефон:*</label>
+              <input class="selection__text-field" type="tel" id="phone" name="phone" placeholder="8 (960) 900-60-90">
+              <svg class="selection__icon selection__icon--phone" width="20" height="20">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="selection__wrapper line">
+            <h2 class="selection__fieldset-title line__title">Комментарий</h2>
+          </div>
+          <div class="selection__fieldset selection__fieldset--comment container">
+            <textarea class="selection__comment" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+          </div>
+          <div class="selection__wrapper selection__wrapper--last line">
+            <h2 class="selection__fieldset-title line__title">Дополнительно</h2>
+          </div>
+          <div class="selection__fieldset selection__fieldset--add container">
+            <ul class="selection__list selection__list--columns">
+              <li class="selection__block">
+                <input class="visually-hidden selection__checkbox" type="checkbox" id="sweetener" name="sweetener" checked>
+                <label class="selection__checkbox-label" for="sweetener">Сахарозаменитель</label>
+              </li>
+              <li class="selection__block">
+                <input class="visually-hidden selection__checkbox" type="checkbox" id="water" name="water">
+                <label class="selection__checkbox-label" for="water">Питьевая вода</label>
+              </li>
+              <li class="selection__block">
+                <input class="visually-hidden selection__checkbox" type="checkbox" id="milk" name="milk">
+                <label class="selection__checkbox-label" for="milk">Молоко</label>
+              </li>
+              <li class="selection__block">
+                <input class="visually-hidden selection__checkbox" type="checkbox" id="vitamins" name="vitamins">
+                <label class="selection__checkbox-label" for="vitamins">Витамины</label>
+              </li>
+            </ul>
+          </div>
+          <div class="selection__button-wrapper container">
+            <button class="selection__button button" type="submit">Отправить заявку</button>
+            <p class="selection__sub">* — Обязательные поля</p>
+          </div>
+        </form>
+      </section>
+      <section class="contacts contacts--grey">
+        <div class="contacts__wrapper">
+          <h2 class="contacts__title">Приглашаем <br>к сотрудничеству дилеров!</h2>
+          <div class="contacts__adress-wrapper">
+            <p class="contacts__adress">ул. Большая Конюшенная, д. 19/8</p>
+            <p class="contacts__city">Санкт-Петербург</p>
+          </div>
+        </div>
+        <div class="contacts__map-wrapper" id="map"></div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__wrapper container">
+        <div class="page-footer__block page-footer__block--logo footer-logo">
+          <a class="footer-logo__link" href="#">
+            <svg class="footer-logo__image" width="128" height="24">
+              <use xlink:href="#logo-footer"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="page-footer__block social">
+          <ul class="social__list">
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Вконтакте</span>
+                <svg class="social__icon social__icon--vk" width="22" height="12">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Инстаграм</span>
+                <svg class="social__icon social__icon--in" width="16" height="16">
+                  <use xlink:href="#icon-insta"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#">
+                <span class="visually-hidden">Фейсбук</span>
+                <svg class="social__icon social__icon--fb" width="10" height="19">
+                  <use xlink:href="#icon-fb"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__block copyright">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">
+            <b class="copyright__name">HTML Academy</b>
+            <svg class="copyright__image" width="27" height="34">
+              <use xlink:href="#htmlacademy"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.min.js"></script>
+    <script src="js/lib/picturefill.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi-aPDQ_WhVLVHhQ_9SvaemTxHPEuRsm4&callback=initMap"></script>
+  </body>
+</html>
